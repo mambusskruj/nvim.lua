@@ -10,6 +10,7 @@
 return {
     {
         "rhysd/vim-grammarous",
+        lazy = false,
         keys = {
             { "<leader>g", "<cmd>GrammarousCheck --lang=en --comments-only<cr>", noremap = true },
         },
