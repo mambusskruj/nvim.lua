@@ -1,0 +1,3 @@
+" Autopairs for { [ " ' etc.
+" NOT SURE ABOUT THAT
+Plug 'windwp/nvim-autopairs'
