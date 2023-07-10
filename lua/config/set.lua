@@ -10,7 +10,7 @@
 -- vim.opt.cabbrev = "WQA wqa"
 
 -- nvim feature for filename on the top
-vim.opt.winbar = '%=%m\\ %f%='
+vim.opt.winbar = '%=%m %f%='
 
 -- global statusline
 vim.opt.laststatus = 3
@@ -30,7 +30,7 @@ vim.opt.eol = true
 -- disable syntax highlighting
 vim.opt.syntax = "enable"
 
--- highlight cursor line 
+-- highlight cursor line
 -- vim.opt.cursorline = true
 
 -- Better colors

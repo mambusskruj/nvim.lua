@@ -23,15 +23,16 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "gitcommit,markdown",
     callback = function(opts)
-        vim.api.nvim_create_autocmd({"BufRead","InsertLeave"}, {
+        vim.api.nvim_create_autocmd({"BufWritePost"}, {
 			buffer = opts.buf,
 			command =  [[:GrammarousCheck --lang=en]]
 		})
     end,
 })
 
--- check grammar for code comments
-vim.api.nvim_create_autocmd({"BufRead", "BufWritePost"}, {
+-- chec grammar for code comments
+-- (c) It doesn't works on a unix environment
+vim.api.nvim_create_autocmd({"BufWritePost"}, {
     pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.js,*.ts,*.lua,*java,*.groovy,*.toml",
     command = [[:GrammarousCheck --lang=en  --comments-only]]
 })

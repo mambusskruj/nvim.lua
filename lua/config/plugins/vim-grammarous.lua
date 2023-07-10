@@ -14,6 +14,8 @@ return {
         keys = {
             { "<leader>g", "<cmd>GrammarousCheck --lang=en --comments-only<cr>", noremap = true },
         },
-
+        config = function()
+            vim.g.grammarous = "#use_vim_spelllang = 1"
+        end,
     }
 }
