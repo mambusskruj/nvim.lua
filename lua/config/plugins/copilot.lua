@@ -6,7 +6,7 @@ return {
                 enabled = true,
                 auto_trigger = false,
                 keymap = {
-                    accept = "<leader>f",
+                    accept = "<leader>j",
                     accept_word = false,
                     accept_line = false,
                     next = "<leader>d",

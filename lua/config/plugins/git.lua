@@ -1,6 +1,7 @@
 return {
     {
         "tpope/vim-fugitive",
+        lazy = false,
         keys = {
             { "<leader>gg", "<cmd>G<cr>", noremap = true },
             { "<leader>gj", "<cmd>diffget //2<cr>", noremap = true },
@@ -17,8 +18,8 @@ return {
             { "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", noremap = true },
             { "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", noremap = true },
             { "<leader>hh", "<cmd>Gitsigns setqflist", noremap = true },
-            { "<leader>[h", "<cmd>Gitsigns prev_hunk<cr>", noremap = true },
-            { "<leader>]h", "<cmd>Gitsigns next_hunk<cr>", noremap = true },
+            { "<leader>h[", "<cmd>Gitsigns prev_hunk<cr>", noremap = true },
+            { "<leader>h]", "<cmd>Gitsigns next_hunk<cr>", noremap = true },
         },
         opts = {
             signs = {

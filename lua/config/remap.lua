@@ -4,7 +4,7 @@ vim.g.mapleader = "\\"
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- center oriented navigation 
+-- center oriented navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
@@ -46,3 +46,6 @@ vim.keymap.set("n", "<Right>", "<NOP>")
 -- ESC for remove search highligh
 vim.keymap.set("n", "<esc><esc>", "<cmd>noh<return><esc>", { silent = true })
 
+-- browsing
+vim.keymap.set("n", "<leader>f", "<cmd>Vex<cr>")
+vim.keymap.set("n", "<leader>r", "<cmd>Lexplore<cr>")

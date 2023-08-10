@@ -1,9 +1,10 @@
 return {
-    { 
+    {
         "itchyny/lightline.vim",
         config = function ()
             vim.g.lightline = {
-                colorscheme = 'tokyonight',
+                -- colorscheme = 'tokyonight',
+                colorscheme = 'yui',
                 -- integration with git, shows git branch at the line
                 active = {
                     left = {

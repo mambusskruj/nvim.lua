@@ -1,5 +1,5 @@
 return {
-    -- MASON and wrappers for it 
+    -- MASON and wrappers for it
 
     {
         "williamboman/mason.nvim",

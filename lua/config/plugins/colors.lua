@@ -13,14 +13,42 @@
 
 return {
     {
-        "folke/tokyonight.nvim",
+        "cideM/yui",
         lazy = false,
         priority = 1000,
-        opts = { style = "day" },
         config = function()
             -- load the colorscheme here
-            vim.cmd([[colorscheme tokyonight-day]])
+            -- vim.cmd([[let g:yui_lightline = v:true]])
+            -- vim.cmd([[let g:yui_comments = 'bg']])
+            -- vim.cmd([[let g:yui_line_numbers = 'fade']])
+            -- vim.cmd([[colorscheme yui]])
         end,
-    }
+    },
+    {
+        "mambusskruj/happy_hacking.vim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- load the colorscheme here
+            vim.cmd([[set background=dark]])
+            vim.cmd([[colorscheme happy_hacking]])
+        end,
+    },
+
+
 }
+
+-- return {
+--     {
+--         "folke/tokyonight.nvim",
+--         lazy = false,
+--         priority = 1000,
+--         opts = { style = "day" },
+--         config = function()
+--             -- load the colorscheme here
+--             vim.cmd([[colorscheme tokyonight-day]])
+--         end,
+--     }
+-- }
+
 
