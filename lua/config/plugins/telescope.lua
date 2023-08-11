@@ -84,16 +84,12 @@ return {
 
                 buffers = {
                     ignore_current_buffer = true,
-                    sort_mru = true
+                    sort_mru = true,
+                    initial_mode = "normal" -- can be 'insert' and 'normal'
+
                 }
 
             },
-
-            extensions = {
-                project = {
-                    hidden_files = true -- default: false
-                },
-            }
         },
 
         config = function(_, opts)
