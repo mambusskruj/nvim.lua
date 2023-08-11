@@ -83,7 +83,7 @@ return {
                 },
 
                 buffers = {
-                    ignore_current_buffer = true,
+                    ignore_current_buffer = false,
                     sort_mru = true,
                     initial_mode = "normal" -- can be 'insert' and 'normal'
 
