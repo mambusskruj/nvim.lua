@@ -4,5 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"sindrets/diffview.nvim",
 	},
-	opts = {},
+	opts = {
+		disable_builtin_notifications = true,
+	},
 }
