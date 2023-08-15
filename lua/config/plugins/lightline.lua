@@ -4,7 +4,7 @@ return {
         config = function ()
             vim.g.lightline = {
                 -- colorscheme = 'tokyonight',
-                colorscheme = 'yui',
+                colorscheme = 'catppuccin',
                 -- integration with git, shows git branch at the line
                 active = {
                     left = {
