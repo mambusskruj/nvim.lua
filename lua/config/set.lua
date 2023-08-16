@@ -10,7 +10,7 @@
 -- vim.opt.cabbrev = "WQA wqa"
 
 -- nvim feature for filename on the top
-vim.opt.winbar = '%=%m %f%='
+vim.opt.winbar = "%=%m %f%="
 
 -- global statusline
 vim.opt.laststatus = 3
@@ -27,7 +27,7 @@ vim.opt.eol = true
 -- use dash as part of the word
 -- vim.opt.iskeyword = vim.opt.iskeyword + "-"
 
--- disable syntax highlighting
+-- enable syntax highlighting
 vim.opt.syntax = "enable"
 
 -- highlight cursor line
@@ -99,9 +99,13 @@ vim.opt.diffopt = vim.opt.diffopt + "linematch:60"
 vim.g.netrw_browse_split = 4
 vim.g.netrw_winsize = 30
 vim.g.netrw_liststyle = 0
+vim.g.netrw_fastbrowse = 0  -- no netrw buffers in the buffers list
 
 -- for shellckeck not to show info messages
 vim.env.SHELLCHECK_OPTS = "--severity=warning"
 
 -- better autocompletion experience
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = "menuone,noselect"
+
+-- don't change cursor shape on insert mode aka based
+vim.opt.guicursor = ""

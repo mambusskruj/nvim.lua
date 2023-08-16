@@ -8,13 +8,16 @@ return {
 		opts = {
 			disable_builtin_notifications = true,
 		},
+		keys = {
+			{ "<leader>gg", "<cmd>Neogit<cr>", noremap = true },
+		},
 	},
 
 	{
 		"tpope/vim-fugitive",
 		lazy = false,
 		keys = {
-			{ "<leader>gg", "<cmd>G<cr>", noremap = true },
+			-- { "<leader>gg", "<cmd>G<cr>", noremap = true },
 			{ "<leader>gj", "<cmd>diffget //2<cr>", noremap = true },
 			{ "<leader>gk", "<cmd>diffget //3<cr>", noremap = true },
 			{ "<leader>gfr", "<cmd>G fetch | G rebase origin/master<cr>", noremap = true },
