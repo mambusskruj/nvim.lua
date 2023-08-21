@@ -21,7 +21,7 @@ return {
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
+		branch = "dev-v3",
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
@@ -43,7 +43,17 @@ return {
 				lsp.default_keymaps({ buffer = bufnr })
 			end)
 
-			lsp.setup()
+			require("mason").setup({})
+			require("mason-lspconfig").setup({
+				handlers = {
+					lsp.default_setup,
+					lua_ls = function()
+						require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+					end,
+				},
+			})
+
+			require("lsp-zero").extend_cmp()
 
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
@@ -156,9 +166,12 @@ return {
 
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-		opts = {
-			ensure_installed = { "python" },
-		},
+		config = function()
+			require("mason-nvim-dap").setup({
+				ensure_installed = { "python" },
+				handlers = {},
+			})
+		end,
 	},
 
 	{
