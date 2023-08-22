@@ -11,6 +11,9 @@ return {
 				"for_statement",
 				"while_statement",
 			},
+			exclude = {
+				"NeogitCommitMessage",
+			},
 		})
 		vim.cmd([[ TwilightEnable ]])
 	end,
