@@ -99,7 +99,7 @@ vim.opt.diffopt = vim.opt.diffopt + "linematch:60"
 vim.g.netrw_browse_split = 4
 vim.g.netrw_winsize = 30
 vim.g.netrw_liststyle = 0
-vim.g.netrw_fastbrowse = 0  -- no netrw buffers in the buffers list
+vim.g.netrw_fastbrowse = 0 -- no netrw buffers in the buffers list
 
 -- for shellckeck not to show info messages
 vim.env.SHELLCHECK_OPTS = "--severity=warning"
