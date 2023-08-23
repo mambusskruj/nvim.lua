@@ -24,8 +24,8 @@ vim.keymap.set("n", "<leader>t", "<cmd>tabnew | term<cr>")
 
 -- quickfixlist
 
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>zz")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>zz")
+vim.keymap.set("n", "<C-s>", "<cmd>cnext<cr>zz")
+vim.keymap.set("n", "<C-a>", "<cmd>cprev<cr>zz")
 
 -- Doesn't work on Alacritty need to fix
 -- function! ToggleQuickFix()
