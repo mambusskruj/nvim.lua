@@ -1,3 +1,3 @@
 return {
-	"itchyny/vim-cursorword",
+	-- "itchyny/vim-cursorword",
 }

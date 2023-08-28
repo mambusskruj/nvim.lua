@@ -109,3 +109,7 @@ vim.opt.completeopt = "menuone,noselect"
 
 -- don't change cursor shape on insert mode aka based
 vim.opt.guicursor = ""
+
+-- disable number row
+vim.opt.number = false
+vim.opt.relativenumber = false

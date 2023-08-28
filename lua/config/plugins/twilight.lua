@@ -15,6 +15,5 @@ return {
 				"NeogitCommitMessage",
 			},
 		})
-		vim.cmd([[ TwilightEnable ]])
 	end,
 }
