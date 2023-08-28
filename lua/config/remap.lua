@@ -49,3 +49,7 @@ vim.keymap.set("n", "<esc><esc>", "<cmd>noh<return><esc>", { silent = true })
 -- browsing
 vim.keymap.set("n", "<leader>f", "<cmd>Vex<cr>")
 vim.keymap.set("n", "<leader>r", "<cmd>Lexplore<cr>")
+
+-- in terminal mode press esc or ctrl+[ to go back to normal mode
+vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
+vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
