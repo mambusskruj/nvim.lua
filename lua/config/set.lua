@@ -12,7 +12,7 @@
 -- nvim feature for filename on the top
 vim.opt.winbar = "%=%m %f%="
 
--- global statusline
+-- global statusline (always and ONLY the last window)
 vim.opt.laststatus = 3
 
 -- set shell for faster output
@@ -26,9 +26,6 @@ vim.opt.eol = true
 
 -- use dash as part of the word
 -- vim.opt.iskeyword = vim.opt.iskeyword + "-"
-
--- enable syntax highlighting
-vim.opt.syntax = "enable"
 
 -- highlight cursor line
 -- vim.opt.cursorline = true
@@ -50,18 +47,11 @@ vim.opt.relativenumber = true
 -- columns used for the line number
 vim.opt.numberwidth = 1
 
--- highlights finds
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-
 -- highlight only first finded
 -- set nohlsearch
 
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
-
--- navigate buffers without losing unsaved work
-vim.opt.hidden = true
 
 -- start scrolling when X lines from top or bottom
 vim.opt.scrolloff = 10
@@ -73,9 +63,6 @@ vim.opt.scroll = 15
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
 vim.opt.updatetime = 50 -- Save swap file and trigger CursorHold
-
--- enable mouse support
-vim.opt.mouse = "a"
 
 -- case-insensitive search unless capital letters are used
 vim.opt.smartcase = true
