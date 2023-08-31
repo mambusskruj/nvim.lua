@@ -38,9 +38,18 @@ return {
 		},
 		init = function()
 			local lsp = require("lsp-zero").preset({})
+			local lsp_config = require("lspconfig")
 
 			lsp.on_attach(function(client, bufnr)
 				lsp.default_keymaps({ buffer = bufnr })
+				local opts = { noremap = true, silent = true }
+				local keymap = vim.api.nvim_buf_set_keymap
+				keymap(bufnr, "n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+				keymap(bufnr, "n", "gA", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+				keymap(bufnr, "n", "gF", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
+				keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+				keymap(bufnr, "n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+				keymap(bufnr, "n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 			end)
 
 			require("mason").setup({})
@@ -48,7 +57,17 @@ return {
 				handlers = {
 					lsp.default_setup,
 					lua_ls = function()
-						require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+						lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
+					end,
+					grammarly = function()
+						lsp_config.grammarly.setup({
+							filetypes = {
+								"markdown",
+								"text",
+								"NeogitCommitMessage",
+								"gitcommit",
+							},
+						})
 					end,
 				},
 			})
