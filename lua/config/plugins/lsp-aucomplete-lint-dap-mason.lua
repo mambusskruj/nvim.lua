@@ -205,6 +205,12 @@ return {
 			{ "<leader>e", "<cmd>lua require'dapui'.toggle()<CR>", noremap = true, silent = true },
 			{ "<leader>w", "<cmd>lua require'dap'.continue()<CR>", noremap = true, silent = true },
 			{ "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", noremap = true, silent = true },
+			{
+				"<leader>B",
+				"<cmd>lua require'dap'.toggle_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+				noremap = true,
+				silent = true,
+			},
 		},
 		opts = {
 			layouts = {
@@ -216,13 +222,13 @@ return {
 						{ id = "stacks", size = 0.25 },
 						{ id = "watches", size = 0.20 },
 					},
-					size = 50,
+					size = 60,
 					position = "left",
 				},
 				{
 					elements = {
-						{ id = "repl", size = 0.3 },
-						{ id = "console", size = 0.7 },
+						{ id = "repl", size = 0.4 },
+						{ id = "console", size = 0.6 },
 					},
 					size = 20,
 					position = "bottom",
@@ -230,6 +236,7 @@ return {
 			},
 			size = 65,
 			position = "left", -- Can be "left", "right", "top", "bottom"
+			expand_lines = false,
 		},
 		init = function()
 			local dap, dapui = require("dap"), require("dapui")
