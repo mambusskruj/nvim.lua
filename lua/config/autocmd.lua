@@ -34,10 +34,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		})
 	end,
 })
-
--- -- check grammar for code comments
--- -- (c) It doesn't works on a unix environment
--- vim.api.nvim_create_autocmd({"BufWritePost"}, {
---     pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.js,*.ts,*.lua,*java,*.groovy,*.toml",
---     command = [[:GrammarousCheck --lang=en  --comments-only]]
--- })
