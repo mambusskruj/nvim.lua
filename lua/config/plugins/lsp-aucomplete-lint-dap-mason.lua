@@ -50,6 +50,12 @@ return {
 				keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 				keymap(bufnr, "n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 				keymap(bufnr, "n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+				keymap(bufnr, "n", "gh", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
+				-- disable virtual text
+				vim.diagnostic.config({
+					virtual_text = false,
+				})
 			end)
 
 			require("mason").setup({})
@@ -167,7 +173,15 @@ return {
 
 	-- linters
 
-	{ "mfussenegger/nvim-lint" },
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("lint").linters_by_ft = {
+				python = { "pylint" },
+				json = { "jsonlint" },
+			}
+		end,
+	},
 
 	-- DAP
 
