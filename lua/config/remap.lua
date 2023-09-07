@@ -22,6 +22,11 @@ vim.keymap.set("n", "Q", "<nop>")
 -- terminal
 vim.keymap.set("n", "<leader>t", "<cmd>tabnew | term<cr>")
 
+-- loclist
+
+vim.keymap.set("n", "<Down>", "<cmd>lnext<cr>zz")
+vim.keymap.set("n", "<Up>", "<cmd>lprev<cr>zz")
+
 -- quickfixlist
 
 vim.keymap.set("n", "<C-s>", "<cmd>cnext<cr>zz")
@@ -38,8 +43,8 @@ vim.keymap.set("n", "<C-a>", "<cmd>cprev<cr>zz")
 -- nnoremap <silent> <C-h> :call ToggleQuickFix()<cr>
 
 -- Disable arrow buttons navigation for take use to hjkl
-vim.keymap.set("n", "<Up>", "<NOP>")
-vim.keymap.set("n", "<Down>", "<NOP>")
+-- vim.keymap.set("n", "<Up>", "<NOP>")
+-- vim.keymap.set("n", "<Down>", "<NOP>")
 vim.keymap.set("n", "<Left>", "<NOP>")
 vim.keymap.set("n", "<Right>", "<NOP>")
 
