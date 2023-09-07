@@ -9,6 +9,17 @@ return {
 				},
 				python = {
 					require("formatter.filetypes.python").black,
+					function()
+						return {
+							exe = "black",
+							args = {
+								"--preview",
+								"-q",
+								"-",
+							},
+							stdin = true,
+						}
+					end,
 				},
 				lua = {
 					require("formatter.filetypes.lua").stylua,
