@@ -85,7 +85,7 @@ return {
 				border = true,
 				layout_strategy = "vertical",
 				layout_config = {
-					width = 0.8,
+					width = 0.9,
 					-- preview_width = 0.45, -- only for horizontal layout
 					scroll_speed = 5,
 				},
@@ -159,9 +159,9 @@ return {
 				},
 
 				buffers = {
-					ignore_current_buffer = false,
+					ignore_current_buffer = true,
 					sort_mru = true,
-					initial_mode = "normal", -- can be 'insert' and 'normal'
+					initial_mode = "insert", -- can be 'insert' and 'normal'
 				},
 			},
 		},
