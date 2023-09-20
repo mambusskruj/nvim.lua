@@ -23,14 +23,3 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	command = [[:FormatWrite]],
 })
-
--- check grammar
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "gitcommit,markdown",
-	callback = function(opts)
-		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-			buffer = opts.buf,
-			command = [[:GrammarousCheck --lang=en]],
-		})
-	end,
-})
