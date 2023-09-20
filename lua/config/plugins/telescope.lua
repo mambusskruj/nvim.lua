@@ -58,7 +58,7 @@ return {
 			{
 				"<leader>l",
 				function()
-					require("telescope.builtin").lsp_references()
+					require("telescope.builtin").lsp_document_symbols()
 				end,
 				noremap = true,
 			},
@@ -162,6 +162,9 @@ return {
 					ignore_current_buffer = true,
 					sort_mru = true,
 					initial_mode = "insert", -- can be 'insert' and 'normal'
+				},
+				lsp_document_symbols = {
+					ignore_symbols = { "variable" },
 				},
 			},
 		},
