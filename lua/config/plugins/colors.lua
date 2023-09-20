@@ -7,35 +7,35 @@ return {
 			vim.cmd("colorscheme github_light")
 		end,
 	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		init = function()
-			require("catppuccin").setup({
-				no_bold = true,
-				no_italic = true,
-				integrations = {
-					gitsigns = true,
-					treesitter = true,
-					markdown = true,
-					mason = true,
-					neogit = true,
-					dap = {
-						enabled = true,
-						enable_ui = true, -- enable nvim-dap-ui
-					},
-					treesitter_context = true,
-					symbols_outline = true,
-					telescope = {
-						enabled = true,
-					},
-				},
-			})
-			-- vim.cmd([[set background=dark]])
-			-- vim.cmd.colorscheme("catppuccin")
-		end,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	init = function()
+	-- 		require("catppuccin").setup({
+	-- 			no_bold = true,
+	-- 			no_italic = true,
+	-- 			integrations = {
+	-- 				gitsigns = true,
+	-- 				treesitter = true,
+	-- 				markdown = true,
+	-- 				mason = true,
+	-- 				neogit = true,
+	-- 				dap = {
+	-- 					enabled = true,
+	-- 					enable_ui = true, -- enable nvim-dap-ui
+	-- 				},
+	-- 				treesitter_context = true,
+	-- 				symbols_outline = true,
+	-- 				telescope = {
+	-- 					enabled = true,
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 		-- vim.cmd([[set background=dark]])
+	-- 		-- vim.cmd.colorscheme("catppuccin")
+	-- 	end,
+	-- },
 	{
 		"cideM/yui",
 		lazy = false,
@@ -48,14 +48,14 @@ return {
 			-- vim.cmd([[colorscheme yui]])
 		end,
 	},
-	{
-		"mambusskruj/happy_hacking.vim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- load the colorscheme here
-			-- vim.cmd([[set background=dark]])
-			-- vim.cmd([[colorscheme happy_hacking]])
-		end,
-	},
+	-- {
+	-- 	"mambusskruj/happy_hacking.vim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		-- vim.cmd([[set background=dark]])
+	-- 		-- vim.cmd([[colorscheme happy_hacking]])
+	-- 	end,
+	-- },
 }
