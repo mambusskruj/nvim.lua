@@ -100,3 +100,6 @@ vim.opt.guicursor = ""
 -- disable number row
 vim.opt.number = false
 vim.opt.relativenumber = false
+
+-- disable status line
+vim.opt.laststatus = 0
