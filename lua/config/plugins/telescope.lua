@@ -164,7 +164,7 @@ return {
 					initial_mode = "insert", -- can be 'insert' and 'normal'
 				},
 				lsp_document_symbols = {
-					ignore_symbols = { "variable" },
+					ignore_symbols = { "variable", "constant" },
 				},
 			},
 		},
