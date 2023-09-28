@@ -187,9 +187,7 @@ return {
 
 	{
 		"mfussenegger/nvim-dap",
-		init = function()
-			require("dap.ext.vscode").load_launchjs("${workspaceFolder}/launch.json")
-
+		config = function()
 			local sign = vim.fn.sign_define
 			sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
@@ -198,12 +196,9 @@ return {
 	},
 
 	{
-		"jay-babu/mason-nvim-dap.nvim",
+		"mfussenegger/nvim-dap-python",
 		config = function()
-			require("mason-nvim-dap").setup({
-				ensure_installed = { "python" },
-				handlers = {},
-			})
+			require("dap-python").setup()
 		end,
 	},
 
@@ -254,6 +249,10 @@ return {
 		},
 		init = function()
 			local dap, dapui = require("dap"), require("dapui")
+
+			-- local cwd = vim.fn.getcwd()
+			require("dap.ext.vscode").load_launchjs("./launch.json")
+
 			dap.listeners.after.event_initialized["dapui_config"] = function()
 				dapui.open()
 			end
