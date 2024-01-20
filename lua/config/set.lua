@@ -94,8 +94,8 @@ vim.env.SHELLCHECK_OPTS = "--severity=warning"
 -- better autocompletion experience
 vim.opt.completeopt = "menuone,noselect"
 
--- don't change cursor shape on insert mode aka based
-vim.opt.guicursor = ""
+-- -- don't change cursor shape on insert mode aka based
+-- vim.opt.guicursor = ""
 
 -- disable number row
 vim.opt.number = false
