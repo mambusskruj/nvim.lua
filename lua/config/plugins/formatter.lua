@@ -8,18 +8,7 @@ return {
 					require("formatter.filetypes.json").jq,
 				},
 				python = {
-					require("formatter.filetypes.python").black,
-					function()
-						return {
-							exe = "black",
-							args = {
-								"--preview",
-								"-q",
-								"-",
-							},
-							stdin = true,
-						}
-					end,
+					require("formatter.filetypes.python").ruff,
 				},
 				lua = {
 					require("formatter.filetypes.lua").stylua,
