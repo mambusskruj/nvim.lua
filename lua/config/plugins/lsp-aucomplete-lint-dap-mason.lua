@@ -176,8 +176,30 @@ return {
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
+			-- update with new args
+			local ruff = require("lint").linters.ruff
+
+			new_args = {
+				"--select",
+				"ALL",
+				"--no-cache",
+			}
+			ruff_args = {}
+			n = 0
+			for _, v in ipairs(new_args) do
+				n = n + 1
+				ruff_args[n] = v
+			end
+			for _, v in ipairs(ruff.args) do
+				n = n + 1
+				ruff_args[n] = v
+			end
+
+			ruff.args = ruff_args
+			--
+
 			require("lint").linters_by_ft = {
-				python = { "pylint" },
+				python = { "ruff" },
 				json = { "jsonlint" },
 			}
 		end,
@@ -254,7 +276,7 @@ return {
 			require("dap.ext.vscode").load_launchjs("./launch.json")
 
 			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
+				dapui.open({ reset = true })
 			end
 			dap.listeners.before.event_terminated["dapui_config"] = function()
 				dapui.close()
