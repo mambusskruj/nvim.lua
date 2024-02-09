@@ -60,21 +60,52 @@ return {
 
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
-				handlers = {
-					lsp.default_setup,
-					lua_ls = function()
-						lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
-					end,
-					grammarly = function()
-						lsp_config.grammarly.setup({
-							filetypes = {
-								"markdown",
-								"text",
-								"NeogitCommitMessage",
-								"gitcommit",
+				ensure_installed = {
+					"lua_ls",
+					"grammarly",
+					"ansiblels",
+					"bashls",
+					"docker_compose_language_service",
+					"dockerls",
+					"eslint",
+					"grammarly",
+					"groovyls",
+					"helm_ls",
+					"html",
+					"jsonls",
+					"terraformls",
+					"tsserver",
+					"yamlls",
+					"pyright",
+					"ruff_lsp",
+					"taplo",
+				},
+			})
+
+			-- Here we can add custom settings for each LSP
+			local lsp_config = require("lspconfig")
+			lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
+			lsp_config.grammarly.setup({
+				filetypes = {
+					"markdown",
+					"text",
+					"NeogitCommitMessage",
+					"gitcommit",
+				},
+			})
+			lsp_config.yamlls.setup({
+				settings = {
+					yaml = {
+						customTags = {
+							"!reference sequence",
+						},
+						schemas = {
+							["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
+								".gitlab-ci.{yml, yaml}",
+								"gitlab-ci/**/*.{yml, yaml}",
 							},
-						})
-					end,
+						},
+					},
 				},
 			})
 
