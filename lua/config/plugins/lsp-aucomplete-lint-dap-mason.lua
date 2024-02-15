@@ -38,7 +38,6 @@ return {
 		},
 		init = function()
 			local lsp = require("lsp-zero").preset({})
-			local lsp_config = require("lspconfig")
 
 			lsp.on_attach(function(client, bufnr)
 				lsp.default_keymaps({ buffer = bufnr })
@@ -83,7 +82,26 @@ return {
 			})
 
 			-- Here we can add custom settings for each LSP
+			--
 			local lsp_config = require("lspconfig")
+
+			-- default setups
+			lsp_config.ansiblels.setup({})
+			lsp_config.pyright.setup({})
+			lsp_config.ruff_lsp.setup({})
+			lsp_config.bashls.setup({})
+			lsp_config.dockerls.setup({})
+			lsp_config.docker_compose_language_service.setup({})
+			lsp_config.eslint.setup({})
+			lsp_config.groovyls.setup({})
+			lsp_config.helm_ls.setup({})
+			lsp_config.html.setup({})
+			lsp_config.jsonls.setup({})
+			lsp_config.terraformls.setup({})
+			lsp_config.tsserver.setup({})
+			lsp_config.taplo.setup({})
+			--
+
 			lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
 			lsp_config.grammarly.setup({
 				filetypes = {
@@ -108,6 +126,8 @@ return {
 					},
 				},
 			})
+			--
+			--
 
 			require("lsp-zero").extend_cmp()
 
@@ -207,27 +227,28 @@ return {
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
-			-- update with new args
-			local ruff = require("lint").linters.ruff
+			-- i comment this out, because linter should use strict config from repo
+			---- update with new args
+			--local ruff = require("lint").linters.ruff
 
-			new_args = {
-				"--select",
-				"ALL",
-				"--no-cache",
-			}
-			ruff_args = {}
-			n = 0
-			for _, v in ipairs(new_args) do
-				n = n + 1
-				ruff_args[n] = v
-			end
-			for _, v in ipairs(ruff.args) do
-				n = n + 1
-				ruff_args[n] = v
-			end
+			--local new_args = {
+			--	"--select",
+			--	"ALL",
+			--	"--no-cache",
+			--}
+			--local ruff_args = {}
+			--local n = 0
+			--for _, v in ipairs(new_args) do
+			--	n = n + 1
+			--	ruff_args[n] = v
+			--end
+			--for _, v in ipairs(ruff.args) do
+			--	n = n + 1
+			--	ruff_args[n] = v
+			--end
 
-			ruff.args = ruff_args
-			--
+			--ruff.args = ruff_args
+			----
 
 			require("lint").linters_by_ft = {
 				python = { "ruff" },
