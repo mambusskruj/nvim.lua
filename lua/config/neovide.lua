@@ -1,10 +1,10 @@
 if vim.g.neovide then
-	vim.o.guifont = "Comic Code:h13"
+	vim.o.guifont = "Comic Code:h12"
 
 	vim.g.neovide_padding_top = 0 -- Set to 40 if the tabline is hidden
 	vim.g.neovide_padding_bottom = 0
-	vim.g.neovide_padding_right = 350
-	vim.g.neovide_padding_left = 350
+	vim.g.neovide_padding_right = 300
+	vim.g.neovide_padding_left = 300
 
 	vim.g.neovide_refresh_rate_idle = 5
 
@@ -18,7 +18,7 @@ if vim.g.neovide then
 	vim.g.neovide_input_macos_alt_is_meta = true
 	vim.g.neovide_underline_automatic_scaling = true
 
-    vim.g.neovide_cursor_trail_size = 0.3
+	vim.g.neovide_cursor_trail_size = 0.3
 
 	vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
