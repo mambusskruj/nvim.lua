@@ -30,10 +30,8 @@ return {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-cmdline" },
-			{ "hrsh7th/nvim-cmp" }, -- Required
-			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			{ "L3MON4D3/LuaSnip" }, -- Required
-			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "rafamadriz/friendly-snippets" },
 		},
 		init = function()
@@ -133,9 +131,6 @@ return {
 			require("lsp-zero").extend_cmp()
 
 			local cmp = require("cmp")
-			local luasnip = require("luasnip")
-
-			require("luasnip.loaders.from_vscode").lazy_load()
 
 			cmp.setup({
 				-- completion = {
@@ -148,7 +143,6 @@ return {
 						vim_item.menu = ({
 							buffer = "[Buffer]",
 							nvim_lsp = "[LSP]",
-							luasnip = "[Snip]",
 							nvim_lua = "[Lua]",
 						})[entry.source.name]
 						return vim_item
@@ -159,7 +153,6 @@ return {
 					{ name = "path" },
 					{ name = "nvim_lsp" },
 					{ name = "buffer", keyword_length = 3 },
-					{ name = "luasnip", keyword_length = 2 },
 				},
 
 				mapping = {
@@ -178,8 +171,6 @@ return {
 					["<Tab>"] = function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
 						else
 							fallback()
 						end
@@ -188,8 +179,6 @@ return {
 					["<S-Tab>"] = function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif luasnip.jumpable(0) then
-							luasnip.jump(0)
 						else
 							fallback()
 						end
