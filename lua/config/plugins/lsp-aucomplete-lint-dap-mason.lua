@@ -73,7 +73,7 @@ return {
 					"terraformls",
 					"tsserver",
 					"yamlls",
-					"pyright",
+					"pylsp",
 					"ruff_lsp",
 					"taplo",
 				},
@@ -85,7 +85,6 @@ return {
 
 			-- default setups
 			lsp_config.ansiblels.setup({})
-			lsp_config.pyright.setup({})
 			lsp_config.ruff_lsp.setup({})
 			lsp_config.bashls.setup({})
 			lsp_config.dockerls.setup({})
@@ -100,6 +99,20 @@ return {
 			lsp_config.taplo.setup({})
 			--
 
+			lsp_config.pylsp.setup({
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = {
+								ignore = {
+									"E501", -- conflict with ruff: line too long
+									"W503", -- conflict with ruff: line break before binary operator
+								},
+							},
+						},
+					},
+				},
+			})
 			lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
 			lsp_config.grammarly.setup({
 				filetypes = {
