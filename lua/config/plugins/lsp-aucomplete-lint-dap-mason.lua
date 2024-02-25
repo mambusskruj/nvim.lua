@@ -32,7 +32,6 @@ return {
 			{ "hrsh7th/cmp-cmdline" },
 			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "rafamadriz/friendly-snippets" },
 		},
 		init = function()
 			local lsp = require("lsp-zero").preset({})
