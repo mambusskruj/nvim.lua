@@ -76,6 +76,7 @@ return {
 					"pylsp",
 					"ruff_lsp",
 					"taplo",
+					"marksman",
 				},
 			})
 
@@ -97,6 +98,7 @@ return {
 			lsp_config.terraformls.setup({})
 			lsp_config.tsserver.setup({})
 			lsp_config.taplo.setup({})
+			lsp_config.marksman.setup({})
 			--
 
 			lsp_config.pylsp.setup({
