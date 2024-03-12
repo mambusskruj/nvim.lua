@@ -32,6 +32,8 @@ return {
 			{ "hrsh7th/cmp-cmdline" },
 			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "L3MON4D3/LuaSnip" },
+			{ "saadparwaiz1/cmp_luasnip" },
 		},
 		init = function()
 			local lsp = require("lsp-zero").preset({})
@@ -59,13 +61,12 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"grammarly",
 					"ansiblels",
 					"bashls",
 					"docker_compose_language_service",
 					"dockerls",
 					"eslint",
-					"grammarly",
+					"ltex",
 					"groovyls",
 					"helm_ls",
 					"html",
@@ -116,12 +117,27 @@ return {
 				},
 			})
 			lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
-			lsp_config.grammarly.setup({
-				filetypes = {
-					"markdown",
-					"text",
-					"NeogitCommitMessage",
-					"gitcommit",
+
+			local spell_words = {}
+			for word in io.open(vim.fn.stdpath("config") .. "/spell/en.utf-8.add", "r"):lines() do
+				table.insert(spell_words, word)
+			end
+
+			lsp_config.ltex.setup({
+				settings = {
+					ltex = {
+						language = "en-US",
+						enabled = true,
+						dictionary = {
+							["en-US"] = spell_words,
+						},
+					},
+					filetypes = {
+						"markdown",
+						"text",
+						"NeogitCommitMessage",
+						"gitcommit",
+					},
 				},
 			})
 			lsp_config.yamlls.setup({
@@ -145,6 +161,9 @@ return {
 			require("lsp-zero").extend_cmp()
 
 			local cmp = require("cmp")
+			local luasnip = require("luasnip")
+
+			require("luasnip.loaders.from_snipmate").load()
 
 			cmp.setup({
 				-- completion = {
@@ -158,6 +177,7 @@ return {
 							buffer = "[Buffer]",
 							nvim_lsp = "[LSP]",
 							nvim_lua = "[Lua]",
+							luasnip = "[Snip]",
 						})[entry.source.name]
 						return vim_item
 					end,
@@ -167,6 +187,7 @@ return {
 					{ name = "path" },
 					{ name = "nvim_lsp" },
 					{ name = "buffer", keyword_length = 3 },
+					{ name = "luasnip" },
 				},
 
 				mapping = {
@@ -185,6 +206,8 @@ return {
 					["<Tab>"] = function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
 						else
 							fallback()
 						end
@@ -193,6 +216,8 @@ return {
 					["<S-Tab>"] = function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
+						elseif luasnip.jumpable(0) then
+							luasnip.jump(0)
 						else
 							fallback()
 						end

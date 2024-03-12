@@ -15,6 +15,7 @@ return {
 				ensure_installed = {
 					"lua",
 					"markdown",
+					"markdown_inline",
 					"make",
 					"vim",
 					"javascript",
@@ -33,6 +34,7 @@ return {
 					"typescript",
 					"wgsl",
 					"yaml",
+					"vimdoc",
 				},
 				sync_install = false,
 				auto_install = true,

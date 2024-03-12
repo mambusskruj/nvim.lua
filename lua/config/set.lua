@@ -103,3 +103,11 @@ vim.opt.relativenumber = false
 
 -- disable status line
 vim.opt.laststatus = 0
+
+-- add spellfile
+-- zg - add word to spellfile
+-- zw - remove word from spellfile
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
+-- allow concealed characters (hide markdown)
+vim.opt.conceallevel = 2
