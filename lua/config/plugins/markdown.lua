@@ -21,4 +21,11 @@ endfunction
 			vim.g.mkdp_echo_preview_url = 1
 		end,
 	},
+	{
+		"preservim/vim-pencil",
+		ft = { "markdown" },
+		config = function()
+			vim.fn["pencil#init"]({ wrap = "soft", spell = 0 })
+		end,
+	},
 }
