@@ -1,13 +1,13 @@
 -- Too many mistakes
--- vim.opt.cabbrev = "W   w"
--- vim.opt.cabbrev = "Q   q"
--- vim.opt.cabbrev = "Qa  qa"
--- vim.opt.cabbrev = "QA  qa"
--- vim.opt.cabbrev = "Wq  wq"
--- vim.opt.cabbrev = "WQ  wq"
--- vim.opt.cabbrev = "Wqa wqa"
--- vim.opt.cabbrev = "WQa wqa"
--- vim.opt.cabbrev = "WQA wqa"
+vim.keymap.set("ca", "W", "w")
+vim.keymap.set("ca", "Q", "q")
+vim.keymap.set("ca", "Qa", "qa")
+vim.keymap.set("ca", "QA", "qa")
+vim.keymap.set("ca", "Wq", "wq")
+vim.keymap.set("ca", "WQ", "wq")
+vim.keymap.set("ca", "Wqa", "wqa")
+vim.keymap.set("ca", "WQa", "wqa")
+vim.keymap.set("ca", "WQA", "wqa")
 
 -- nvim feature for filename on the top
 vim.opt.winbar = "%=%m %f%="
@@ -109,5 +109,11 @@ vim.opt.laststatus = 0
 -- zw - remove word from spellfile
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
--- allow concealed characters (hide markdown)
-vim.opt.conceallevel = 2
+-- Concealing only for markdown files
+vim.api.nvim_create_autocmd("Filetype", {
+	pattern = "markdown",
+	callback = function()
+		-- allow concealed characters (hide markdown)
+		vim.opt.conceallevel = 2
+	end,
+})
