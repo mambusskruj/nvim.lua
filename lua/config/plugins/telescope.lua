@@ -129,14 +129,14 @@ return {
 							require("telescope.actions").open_qflist(...)
 						end,
 					},
-					i = {
-						["<S-Down>"] = function(...)
-							require("telescope.actions").cycle_history_next(...)
-						end,
-						["<S-Up>"] = function(...)
-							require("telescope.actions").cycle_history_prev(...)
-						end,
-					},
+					-- i = {
+					-- 	["<S-Down>"] = function(...)
+					-- 		require("telescope.actions").cycle_history_next(...)
+					-- 	end,
+					-- 	["<S-Up>"] = function(...)
+					-- 		require("telescope.actions").cycle_history_prev(...)
+					-- 	end,
+					-- },
 				},
 			},
 
