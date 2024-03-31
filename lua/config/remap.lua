@@ -1,4 +1,5 @@
-vim.g.mapleader = "\\"
+-- vim.g.mapleader = "\\"
+vim.g.mapleader = " "
 
 -- move blocks in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
