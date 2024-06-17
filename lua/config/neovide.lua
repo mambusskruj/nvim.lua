@@ -3,8 +3,8 @@ if vim.g.neovide then
 
 	vim.g.neovide_padding_top = 0 -- Set to 40 if the tabline is hidden
 	vim.g.neovide_padding_bottom = 0
-	vim.g.neovide_padding_right = 300
-	vim.g.neovide_padding_left = 300
+	vim.g.neovide_padding_right = 200
+	vim.g.neovide_padding_left = 200
 
 	vim.g.neovide_refresh_rate_idle = 5
 
@@ -15,7 +15,7 @@ if vim.g.neovide then
 	vim.g.neovide_fullscreen = true
 
 	vim.g.neovide_input_use_logo = true
-	vim.g.neovide_input_macos_alt_is_meta = true
+	-- vim.g.neovide_input_macos_alt_is_meta = true
 	vim.g.neovide_underline_automatic_scaling = true
 
 	vim.g.neovide_cursor_trail_size = 0.3

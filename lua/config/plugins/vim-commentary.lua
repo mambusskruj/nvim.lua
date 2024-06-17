@@ -3,5 +3,5 @@
 -- visual mode: 'gc' - comment selected lines
 
 return {
-    "tpope/vim-commentary"
+	-- "tpope/vim-commentary",
 }

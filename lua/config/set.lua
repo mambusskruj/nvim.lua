@@ -11,12 +11,23 @@ vim.keymap.set("ca", "WQA", "wqa")
 
 -- nvim feature for filename on the top
 vim.opt.winbar = "%=%m %f%="
+-- vim.opt.winbar = "%=%m %=%f"
 
 -- global statusline (always and ONLY the last window)
 vim.opt.laststatus = 3
+vim.g.qf_disable_statusline = true
+
+-- self explainatory
+vim.opt.fillchars = {
+	fold = " ",
+	diff = "╱",
+	wbr = " ",
+	msgsep = "─",
+}
 
 -- set shell for faster output
-vim.opt.shell = "/usr/local/bin/bash"
+-- vim.opt.shell = "/usr/local/bin/bash"  -- macos
+vim.opt.shell = "/bin/bash"  --fedora
 
 -- copy to system clipboard
 vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
@@ -30,8 +41,8 @@ vim.opt.eol = true
 -- highlight cursor line
 -- vim.opt.cursorline = true
 
--- Better colors
-vim.opt.termguicolors = true
+-- enable by default in neovim -- Better colors
+-- vim.opt.termguicolors = true
 
 -- indent with spaces
 vim.opt.tabstop = 4
@@ -74,7 +85,8 @@ vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
 
 -- Install fzf
-vim.opt.rtp = vim.opt.rtp + "/usr/local/opt/fzf"
+-- vim.opt.rtp = vim.opt.rtp + "/usr/local/opt/fzf"  -- macos
+vim.opt.rtp = vim.opt.rtp + "/usr/bin/fzf"
 
 -- enable linematch diff option
 vim.opt.diffopt = vim.opt.diffopt + "linematch:60"
@@ -100,9 +112,6 @@ vim.opt.completeopt = "menuone,noselect"
 -- disable number row
 vim.opt.number = false
 vim.opt.relativenumber = false
-
--- disable status line
-vim.opt.laststatus = 0
 
 -- add spellfile
 -- zg - add word to spellfile

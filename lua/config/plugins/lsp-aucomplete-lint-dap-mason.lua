@@ -1,6 +1,15 @@
 return {
-	-- MASON and wrappers for it
+	{
+		"m-demare/hlargs.nvim",
+		lazy = false,
+		config = function()
+			require("hlargs").setup({
+				color = "#c4331d",
+			})
+		end,
+	}, -- highlight arguments
 
+	-- MASON and wrappers for it
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
@@ -67,15 +76,15 @@ return {
 					"dockerls",
 					"eslint",
 					"ltex",
-					"groovyls",
+					-- "groovyls",
 					"helm_ls",
 					"html",
 					"jsonls",
 					"terraformls",
 					"tsserver",
 					"yamlls",
-					"pylsp",
-					"ruff_lsp",
+					"basedpyright",
+					"ruff",
 					"taplo",
 					"marksman",
 				},
@@ -87,7 +96,7 @@ return {
 
 			-- default setups
 			lsp_config.ansiblels.setup({})
-			lsp_config.ruff_lsp.setup({})
+			lsp_config.ruff.setup({})
 			lsp_config.bashls.setup({})
 			lsp_config.dockerls.setup({})
 			lsp_config.docker_compose_language_service.setup({})
@@ -100,22 +109,31 @@ return {
 			lsp_config.tsserver.setup({})
 			lsp_config.taplo.setup({})
 			lsp_config.marksman.setup({})
-			--
-
-			lsp_config.pylsp.setup({
+			lsp_config.basedpyright.setup({
 				settings = {
-					pylsp = {
-						plugins = {
-							pycodestyle = {
-								ignore = {
-									"E501", -- conflict with ruff: line too long
-									"W503", -- conflict with ruff: line break before binary operator
-								},
-							},
+					basedpyright = {
+						analysis = {
+							typeCheckingMode = "off",
 						},
 					},
 				},
 			})
+			--
+
+			-- lsp_config.pylsp.setup({
+			-- 	settings = {
+			-- 		pylsp = {
+			-- 			plugins = {
+			-- 				pycodestyle = {
+			-- 					ignore = {
+			-- 						"E501", -- conflict with ruff: line too long
+			-- 						"W503", -- conflict with ruff: line break before binary operator
+			-- 					},
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
 			lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
 
 			local spell_words = {}
@@ -256,29 +274,6 @@ return {
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
-			-- i comment this out, because linter should use strict config from repo
-			---- update with new args
-			--local ruff = require("lint").linters.ruff
-
-			--local new_args = {
-			--	"--select",
-			--	"ALL",
-			--	"--no-cache",
-			--}
-			--local ruff_args = {}
-			--local n = 0
-			--for _, v in ipairs(new_args) do
-			--	n = n + 1
-			--	ruff_args[n] = v
-			--end
-			--for _, v in ipairs(ruff.args) do
-			--	n = n + 1
-			--	ruff_args[n] = v
-			--end
-
-			--ruff.args = ruff_args
-			----
-
 			require("lint").linters_by_ft = {
 				python = { "ruff" },
 				json = { "jsonlint" },
@@ -294,6 +289,7 @@ return {
 			{ "nvim-neotest/nvim-nio" },
 		},
 		config = function()
+			-- require("dap.ext.vscode").load_launchjs()
 			local sign = vim.fn.sign_define
 			sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
@@ -304,7 +300,7 @@ return {
 	{
 		"mfussenegger/nvim-dap-python",
 		config = function()
-			require("dap-python").setup()
+			require("dap-python").setup("python")
 		end,
 	},
 
@@ -356,7 +352,7 @@ return {
 		init = function()
 			local dap, dapui = require("dap"), require("dapui")
 
-			-- local cwd = vim.fn.getcwd()
+			-- from the workspace root
 			require("dap.ext.vscode").load_launchjs("./launch.json")
 
 			dap.listeners.after.event_initialized["dapui_config"] = function()

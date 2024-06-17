@@ -10,6 +10,7 @@ return {
 				build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 			},
 			{ "nvim-telescope/telescope-live-grep-args.nvim", build = "make" },
+			-- { dir = "~/work/other/repos/telescope-live-grep-args.nvim", build = "make" },
 		},
 		keys = {
 			{
@@ -22,7 +23,7 @@ return {
 			{
 				"<leader>'",
 				function()
-					require("telescope.builtin").find_files()
+					require("telescope.builtin").find_files({ search_file = vim.fn.input("Find files > ") })
 				end,
 				noremap = true,
 			},
@@ -36,7 +37,7 @@ return {
 			{
 				"<leader>;",
 				function()
-					require("telescope.builtin").grep_string()
+					require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
 				end,
 				noremap = true,
 			},
@@ -49,11 +50,12 @@ return {
 				mode = "v",
 			},
 			{
-				"<leader>]",
+				"<leader><leader>",
 				function()
 					require("telescope.builtin").buffers()
 				end,
 				noremap = true,
+				mode = "n",
 			},
 			{
 				"<leader>l",
@@ -116,8 +118,9 @@ return {
 					"--hidden",
 				},
 
-				file_ignore_patterns = { ".git/", "node_modules/", ".env/" },
+				file_ignore_patterns = { ".git/", "node_modules/", ".env/", "env/", ".cache/" },
 				path_display = { "truncate" },
+				-- path_display = { "filename_first" },
 
 				mappings = {
 					n = { -- normal mode (i for insert mode)
@@ -129,14 +132,14 @@ return {
 							require("telescope.actions").open_qflist(...)
 						end,
 					},
-					-- i = {
-					-- 	["<S-Down>"] = function(...)
-					-- 		require("telescope.actions").cycle_history_next(...)
-					-- 	end,
-					-- 	["<S-Up>"] = function(...)
-					-- 		require("telescope.actions").cycle_history_prev(...)
-					-- 	end,
-					-- },
+					i = {
+						["<S-Down>"] = function(...)
+							require("telescope.actions").cycle_history_next(...)
+						end,
+						["<S-Up>"] = function(...)
+							require("telescope.actions").cycle_history_prev(...)
+						end,
+					},
 				},
 			},
 
@@ -144,6 +147,7 @@ return {
 				find_files = {
 					hidden = true,
 					no_ignore = true,
+					initial_mode = "normal", -- can be 'insert' and 'normal'
 				},
 
 				grep_string = {
