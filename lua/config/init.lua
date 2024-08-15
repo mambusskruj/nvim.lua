@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.set")
 require("config.remap")
+require("config.abbrev")
 require("config.autocmd")
 require("config.neovide")
 require("lazy").setup("config.plugins")
