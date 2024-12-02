@@ -18,7 +18,7 @@ end
 cabbrev("fd", "GrugFar")
 cabbrev("rew", "DiffviewOpen")
 cabbrev("crew", "DiffviewClose")
-cabbrev("to", "tabnew")
-cabbrev("tq", "tabclose")
+cabbrev("wd", "windo diffthis")
+cabbrev("wdc", "windo diffoff")
 
 return M

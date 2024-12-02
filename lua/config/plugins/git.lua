@@ -17,16 +17,6 @@ return {
 		end,
 	},
 	{
-		"rhysd/git-messenger.vim",
-		keys = {
-			{ "<leader>gm", "<cmd>GitMessenger<cr>", noremap = true },
-		},
-		config = function()
-			vim.g.git_messenger_include_diff = "current"
-			vim.g.git_messenger_always_into_popup = true
-		end,
-	},
-	{
 		"aaronhallaert/advanced-git-search.nvim",
 		cmd = { "AdvancedGitSearch" },
 		config = function()

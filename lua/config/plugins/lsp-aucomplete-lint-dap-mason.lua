@@ -37,6 +37,20 @@ return {
 
 	{ "williamboman/mason-lspconfig.nvim" },
 
+	--- YAML AND KUBERNETES
+	--- Builtin Kubernetes manifest autodetection
+	{
+		"someone-stole-my-name/yaml-companion.nvim",
+		dependencies = {
+			{ "neovim/nvim-lspconfig" },
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+		config = function()
+			require("telescope").load_extension("yaml_schema")
+		end,
+	},
+
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
@@ -90,7 +104,7 @@ return {
 					"html",
 					"jsonls",
 					"terraformls",
-					"tsserver",
+					"ts_ls",
 					"yamlls",
 					"basedpyright",
 					"ruff",
@@ -115,7 +129,7 @@ return {
 			lsp_config.html.setup({})
 			lsp_config.jsonls.setup({})
 			lsp_config.terraformls.setup({})
-			lsp_config.tsserver.setup({})
+			lsp_config.ts_ls.setup({})
 			lsp_config.taplo.setup({})
 			lsp_config.marksman.setup({})
 			lsp_config.basedpyright.setup({
@@ -154,7 +168,7 @@ return {
 				settings = {
 					ltex = {
 						language = "en-US",
-						enabled = true,
+						enabled = false,
 						dictionary = {
 							["en-US"] = spell_words,
 						},
@@ -162,26 +176,34 @@ return {
 					filetypes = {
 						"markdown",
 						"text",
-						"NeogitCommitMessage",
 						"gitcommit",
 					},
 				},
 			})
-			lsp_config.yamlls.setup({
+
+			local cfg = require("yaml-companion").setup({
 				settings = {
 					yaml = {
 						customTags = {
+							"!reference",
 							"!reference sequence",
 						},
 						schemas = {
 							["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
-								".gitlab-ci.{yml, yaml}",
-								"gitlab-ci/**/*.{yml, yaml}",
+								".gitlab-ci.yml",
+								"gitlab-ci/**/*.yml",
+								"templates/**/*.yml",
+								"templates/*.yml",
+								"stages/**/*.yml",
+								"jobs/**/*.yml",
+								-- "{templates, stages, jobs}/**/*.{yml, yaml}",
 							},
 						},
 					},
 				},
 			})
+
+			lsp_config.yamlls.setup(cfg)
 			--
 			--
 
@@ -284,7 +306,7 @@ return {
 		"mfussenegger/nvim-lint",
 		config = function()
 			require("lint").linters_by_ft = {
-				python = { "ruff" },
+				-- python = { "ruff" },
 				json = { "jsonlint" },
 			}
 		end,
