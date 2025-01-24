@@ -64,3 +64,11 @@ vim.keymap.set("n", "<leader>r", "<cmd>Lexplore<cr>")
 -- in terminal mode press esc or ctrl+[ to go back to normal mode
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
+
+-- Tab switching
+vim.keymap.set("n", "<leader>tt", "<cmd>tabnew<cr>")
+vim.keymap.set("n", "<leader>1", "<cmd>tabn 1<cr>")
+vim.keymap.set("n", "<leader>2", "<cmd>tabn 2<cr>")
+vim.keymap.set("n", "<leader>3", "<cmd>tabn 3<cr>")
+vim.keymap.set("n", "<leader>4", "<cmd>tabn 4<cr>")
+vim.keymap.set("n", "<leader>5", "<cmd>tabn 5<cr>")

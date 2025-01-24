@@ -12,7 +12,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 })
 
--- Try to lint after writing the whole buffer to a file
+-- Try to lint after writing the whole buffer to a file.
+-- Complements the built-in language server client for
+-- languages where there are no language servers,
+-- or where standalone linters provide better results.
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()
 		require("lint").try_lint()
@@ -31,7 +34,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank({
 			higroup = "IncSearch",
-			timeout = 50,
+			timeout = 70,
 		})
 	end,
 })
