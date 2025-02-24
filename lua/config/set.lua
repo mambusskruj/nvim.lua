@@ -76,7 +76,8 @@ vim.opt.undolevels = 10000
 vim.opt.updatetime = 50 -- Save swap file and trigger CursorHold
 
 -- case-insensitive search unless capital letters are used
-vim.opt.smartcase = true
+-- vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 -- no vim bottomline because of lightline plugin
 vim.opt.showmode = false
