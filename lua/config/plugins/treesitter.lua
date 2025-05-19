@@ -1,9 +1,9 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		enabled = true,
-		opts = { mode = "cursor" },
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-context",
+	-- 	enabled = true,
+	-- 	opts = { mode = "cursor" },
+	-- },
 
 	{
 		"nvim-treesitter/nvim-treesitter",
