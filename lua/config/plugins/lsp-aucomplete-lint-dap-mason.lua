@@ -98,7 +98,7 @@ return {
 					"docker_compose_language_service",
 					"dockerls",
 					"eslint",
-					"ltex",
+					-- "ltex",
 					-- "groovyls",
 					"helm_ls",
 					"html",
@@ -110,6 +110,7 @@ return {
 					"ruff",
 					"taplo",
 					"marksman",
+					"harper_ls",
 				},
 			})
 
@@ -132,6 +133,17 @@ return {
 			lsp_config.ts_ls.setup({})
 			lsp_config.taplo.setup({})
 			lsp_config.marksman.setup({})
+
+			lsp_config.harper_ls.setup {
+			  settings = {
+				["harper-ls"] = {
+				  linters = {
+					SentenceCapitalization = false,
+					-- SpellCheck = false
+				  }
+				}
+			  }
+			}
 			lsp_config.basedpyright.setup({
 				settings = {
 					basedpyright = {
@@ -164,22 +176,22 @@ return {
 				table.insert(spell_words, word)
 			end
 
-			lsp_config.ltex.setup({
-				settings = {
-					ltex = {
-						language = "en-US",
-						enabled = false,
-						dictionary = {
-							["en-US"] = spell_words,
-						},
-					},
-					filetypes = {
-						"markdown",
-						"text",
-						"gitcommit",
-					},
-				},
-			})
+			-- lsp_config.ltex.setup({
+			-- 	settings = {
+			-- 		ltex = {
+			-- 			language = "en-US",
+			-- 			enabled = false,
+			-- 			dictionary = {
+			-- 				["en-US"] = spell_words,
+			-- 			},
+			-- 		},
+			-- 		filetypes = {
+			-- 			"markdown",
+			-- 			"text",
+			-- 			"gitcommit",
+			-- 		},
+			-- 	},
+			-- })
 
 			local cfg = require("yaml-companion").setup({
 				settings = {
