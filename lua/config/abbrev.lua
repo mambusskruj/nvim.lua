@@ -16,6 +16,7 @@ function M.command(cmd, match)
 end
 
 cabbrev("fd", "GrugFar")
+cabbrev("O", "Oil")
 cabbrev("rew", "DiffviewOpen origin/master..HEAD")
 cabbrev("crew", "DiffviewClose")
 cabbrev("wd", "windo diffthis")
