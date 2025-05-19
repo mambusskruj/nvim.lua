@@ -16,14 +16,7 @@ return {
 			{
 				"<leader>o",
 				function()
-					require("telescope.builtin").git_files()
-				end,
-				noremap = true,
-			},
-			{
-				"<leader>'",
-				function()
-					require("telescope.builtin").find_files({ search_file = vim.fn.input("Find files > ") })
+					require("telescope.builtin").find_files()
 				end,
 				noremap = true,
 			},
@@ -147,7 +140,7 @@ return {
 				find_files = {
 					hidden = true,
 					no_ignore = true,
-					initial_mode = "normal", -- can be 'insert' and 'normal'
+					initial_mode = "insert", -- can be 'insert' and 'normal'
 				},
 
 				grep_string = {
