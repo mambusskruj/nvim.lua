@@ -1,5 +1,5 @@
 if vim.g.neovide then
-	vim.o.guifont = "Comic Code:h14"
+	vim.o.guifont = "Comic Code:h13"
 
 	vim.g.neovide_padding_top = 0 -- Set to 40 if the tabline is hidden
 	vim.g.neovide_padding_bottom = 0

@@ -4,8 +4,8 @@ return {
 		require("local-highlight").setup({
 			hlgroup = "Search",
 			animate = {
-				enabled = false
-			}
+				enabled = false,
+			},
 		})
 	end,
 }

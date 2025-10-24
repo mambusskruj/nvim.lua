@@ -98,6 +98,7 @@ return {
 					"docker_compose_language_service",
 					"dockerls",
 					"eslint",
+					"stylua",
 					-- "ltex",
 					-- "groovyls",
 					"helm_ls",
@@ -133,17 +134,18 @@ return {
 			lsp_config.ts_ls.setup({})
 			lsp_config.taplo.setup({})
 			lsp_config.marksman.setup({})
+			lsp_config.stylua.setup({})
 
-			lsp_config.harper_ls.setup {
-			  settings = {
-				["harper-ls"] = {
-				  linters = {
-					SentenceCapitalization = false,
-					-- SpellCheck = false
-				  }
-				}
-			  }
-			}
+			lsp_config.harper_ls.setup({
+				settings = {
+					["harper-ls"] = {
+						linters = {
+							SentenceCapitalization = false,
+							-- SpellCheck = false
+						},
+					},
+				},
+			})
 			lsp_config.basedpyright.setup({
 				settings = {
 					basedpyright = {
@@ -339,12 +341,12 @@ return {
 		end,
 	},
 
-	{
-		"mfussenegger/nvim-dap-python",
-		config = function()
-			require("dap-python").setup("python")
-		end,
-	},
+	-- {
+	-- 	"mfussenegger/nvim-dap-python",
+	-- 	config = function()
+	-- 		require("dap-python").setup("python")
+	-- 	end,
+	-- },
 
 	{
 		"rcarriga/nvim-dap-ui",

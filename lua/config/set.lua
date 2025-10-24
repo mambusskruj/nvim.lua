@@ -26,8 +26,8 @@ vim.opt.fillchars = {
 }
 
 -- set shell for faster output
--- vim.opt.shell = "/usr/local/bin/bash"  -- macos
-vim.opt.shell = "/bin/bash"  --fedora
+vim.opt.shell = "/opt/homebrew/bin/bash" -- macos
+-- vim.opt.shell = "/bin/bash" --fedora
 
 -- copy to system clipboard
 vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
@@ -127,3 +127,5 @@ vim.api.nvim_create_autocmd("Filetype", {
 		vim.opt.conceallevel = 2
 	end,
 })
+
+-- vim.opt.winborder = "rounded"

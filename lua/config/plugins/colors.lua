@@ -23,9 +23,7 @@ return {
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[let g:yui_comments = 'bg']])
-	-- 		vim.cmd([[let g:yui_line_numbers = 'fade']])
+	-- 		vim.cmd([[set background=light]])
 	-- 		vim.cmd([[colorscheme yui]])
 	-- 	end,
 	-- },
