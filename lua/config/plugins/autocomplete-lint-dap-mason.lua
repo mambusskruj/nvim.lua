@@ -24,6 +24,7 @@ return {
 		},
 	},
 	-- LSP (works in pair with mason-lspconfig) and autocompletion
+	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/mason-lspconfig.nvim" },
 
 	--- yaml autocomplete sources

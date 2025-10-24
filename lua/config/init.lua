@@ -18,3 +18,5 @@ require("config.autocmd")
 require("config.extui")
 require("config.neovide")
 require("lazy").setup("config.plugins")
+
+require("config.lsp")
