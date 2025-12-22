@@ -128,4 +128,5 @@ vim.api.nvim_create_autocmd("Filetype", {
 	end,
 })
 
--- vim.opt.winborder = "rounded"
+vim.opt.winborder = "rounded"
+vim.opt.pumborder = "rounded"
