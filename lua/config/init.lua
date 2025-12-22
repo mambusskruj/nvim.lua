@@ -17,6 +17,7 @@ require("config.abbrev")
 require("config.autocmd")
 require("config.extui")
 require("config.neovide")
+require("config.core_plugins")
 require("lazy").setup("config.plugins")
 
 require("config.lsp")
