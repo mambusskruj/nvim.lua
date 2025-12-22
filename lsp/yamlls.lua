@@ -22,9 +22,8 @@ return require("schema-companion").setup_client(
 		settings = {
 			yaml = {
 				customTags = {
-					"!reference",
 					"!reference sequence",
-					"!override",
+					"!override sequence",
 					"!reset sequence",
 				},
 			},
