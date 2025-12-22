@@ -5,10 +5,4 @@ return {
 			normalModeSearch = true,
 		},
 	},
-	-- {
-	-- 	"nvim-pack/nvim-spectre",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 	},
-	-- },
 }
