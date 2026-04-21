@@ -1,3 +1,3 @@
 return {
-	"cuducos/yaml.nvim",
+	"https://tangled.org/cuducos.me/yaml.nvim",
 }

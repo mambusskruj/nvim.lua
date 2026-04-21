@@ -1,6 +1,6 @@
 -- remove whitespaces
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.js,*.ts,*.lua,*.json",
+	pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.js,*.ts,*.tsx,*.lua,*.json",
 	command = [[:%s/\s\+$//e]],
 })
 
@@ -80,5 +80,27 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*/launch.json",
 	callback = function(args)
 		require("dap.ext.vscode").load_launchjs(args.file)
+	end,
+})
+
+-- Treesitter-based highlights
+vim.api.nvim_create_autocmd("FileType", {
+	-- pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.md,*.js,*.ts,*.tsx,*.lua,*.html,*.toml,gitcommit",
+	pattern = {
+		"lua",
+		"python",
+		"yaml",
+		"gitcommit",
+		"html",
+		"markdown",
+		"dockerfile",
+		"typescriptreact",
+		"typescript",
+		"javascript",
+		"sh",
+		"toml",
+	},
+	callback = function()
+		vim.treesitter.start()
 	end,
 })

@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		branch = "main",
 		build = ":TSUpdate",
-		config = function()
+		opts = function()
 			local tree = require("nvim-treesitter")
 
 			tree.install({
