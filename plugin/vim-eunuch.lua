@@ -4,4 +4,4 @@
 -- :Chmod: Change the permissions of the current file.
 -- :Mkdir: Create a directory, defaulting to the parent of the current file.
 -- and few others, but I'll hardly use it, so skip it
-return { "tpope/vim-eunuch" }
+vim.pack.add({ "https://github.com/tpope/vim-eunuch" })

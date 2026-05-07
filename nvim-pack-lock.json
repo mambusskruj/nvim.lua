@@ -1,0 +1,124 @@
+{
+  "plugins": {
+    "advanced-git-search.nvim": {
+      "rev": "cead1214709226bdef89093f0c58964fb65c81e8",
+      "src": "https://github.com/aaronhallaert/advanced-git-search.nvim"
+    },
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "formatter.nvim": {
+      "rev": "b9d7f853da1197b83b8edb4cc4952f7ad3a42e41",
+      "src": "https://github.com/mhartington/formatter.nvim"
+    },
+    "grug-far.nvim": {
+      "rev": "21790e59dd0109a92a70cb874dd002af186314f5",
+      "src": "https://github.com/MagicDuck/grug-far.nvim"
+    },
+    "highlight-undo.nvim": {
+      "rev": "ee32e12693d70e66f954d09a504a7371d110fc27",
+      "src": "https://github.com/tzachar/highlight-undo.nvim"
+    },
+    "hlargs.nvim": {
+      "rev": "0b29317c944fb1f76503ce4540d6dceffbb5ccd2",
+      "src": "https://github.com/m-demare/hlargs.nvim"
+    },
+    "kitty-scrollback.nvim": {
+      "rev": "27a34ad53f188758fe202eb08f0063bce572dde4",
+      "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
+    },
+    "linediff.vim": {
+      "rev": "c3780609769a93f4f59421b6324355f37e0ee6c5",
+      "src": "https://github.com/AndrewRadev/linediff.vim"
+    },
+    "local-highlight.nvim": {
+      "rev": "dd8ae2ca26a5cfa17fb598864eacbe2df63938f3",
+      "src": "https://github.com/tzachar/local-highlight.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
+      "src": "https://github.com/williamboman/mason-lspconfig.nvim"
+    },
+    "mason.nvim": {
+      "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
+      "src": "https://github.com/williamboman/mason.nvim"
+    },
+    "nvim-grey": {
+      "rev": "62d268a3e582b846f5c20a895a07bd7d563e9db9",
+      "src": "https://github.com/yorickpeterse/nvim-grey"
+    },
+    "nvim-lint": {
+      "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
+      "src": "https://github.com/mfussenegger/nvim-lint"
+    },
+    "nvim-lspconfig": {
+      "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-pqf": {
+      "rev": "148ee2ca8b06d83fd9bf6f9b9497724ad39a07d6",
+      "src": "https://github.com/yorickpeterse/nvim-pqf"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "schema-companion.nvim": {
+      "rev": "bcccfe46a1796f86b81dc3be6ab80ece3664d3b2",
+      "src": "https://github.com/cenk1cenk2/schema-companion.nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    },
+    "telescope-live-grep-args.nvim": {
+      "rev": "53e9df55b3651dd7cf77e172f1e8c9a17407acca",
+      "src": "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "f04ab730b8f9c6bf3f54a206d0dcddfd70c52d59",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
+    "trouble.nvim": {
+      "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "src": "https://github.com/folke/trouble.nvim"
+    },
+    "vim-eunuch": {
+      "rev": "e86bb794a1c10a2edac130feb0ea590a00d03f1e",
+      "src": "https://github.com/tpope/vim-eunuch"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-maximizer": {
+      "rev": "2e54952fe91e140a2e69f35f22131219fcd9c5f1",
+      "src": "https://github.com/szw/vim-maximizer"
+    },
+    "vim-sleuth": {
+      "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
+      "src": "https://github.com/tpope/vim-sleuth"
+    },
+    "yaml.nvim": {
+      "rev": "49dd23b839fdac865ca31ad64c0b7d88a9927e87",
+      "src": "https://tangled.org/cuducos.me/yaml.nvim"
+    }
+  }
+}
