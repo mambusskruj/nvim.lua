@@ -1,25 +1,30 @@
 local M = {}
 local fn = vim.fn
 
+M.abbrevs = {}
+
 local function cabbrev(input, replace)
-	local cmd = "cnoreabbrev <expr> %s v:lua.require'config.abbrev'.command('%s', '%s')"
+	M.abbrevs[input] = replace
 
-	vim.cmd(cmd:format(input, input, replace))
+	local cmd = "cnoreabbrev <expr> %s v:lua.require'config.abbrev'.command('%s')"
+	vim.cmd(cmd:format(input, input))
 end
 
-function M.command(cmd, match)
-	if fn.getcmdtype() == ":" and fn.getcmdline():match("^" .. cmd) then
-		return match
-	else
-		return cmd
+function M.command(input)
+	if fn.getcmdtype() ~= ":" then
+		return input
 	end
+
+	if fn.getcmdline() ~= input then
+		return input
+	end
+
+	return M.abbrevs[input] or input
 end
 
-cabbrev("fd", "GrugFar")
-cabbrev("O", "Oil")
-cabbrev("rew", "DiffviewOpen origin/master..HEAD")
+cabbrev("fd", "tabnew | vert GrugFar")
+cabbrev("O", "Oil --float")
+cabbrev("Oh", "Oil --float ./")
 cabbrev("crew", "DiffviewClose")
-cabbrev("wd", "windo diffthis")
-cabbrev("wdc", "windo diffoff")
 
 return M

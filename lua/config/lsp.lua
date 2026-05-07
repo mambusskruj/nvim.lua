@@ -1,18 +1,20 @@
-vim.lsp.enable("luals")
-vim.lsp.enable("ansiblels")
-vim.lsp.enable("ruff")
-vim.lsp.enable("bashls")
-vim.lsp.enable("dockerls")
-vim.lsp.enable("docker_compose_language_service")
-vim.lsp.enable("eslint")
-vim.lsp.enable("groovyls")
-vim.lsp.enable("helm_ls")
-vim.lsp.enable("html")
-vim.lsp.enable("jsonls")
-vim.lsp.enable("terraformls")
-vim.lsp.enable("ts_ls")
-vim.lsp.enable("taplo")
-vim.lsp.enable("marksman")
-vim.lsp.enable("harper_ls")
-vim.lsp.enable("basedpyright")
-vim.lsp.enable("yamlls")
+vim.lsp.enable({
+	"luals",
+	"ansiblels",
+	"ruff",
+	"bashls",
+	"dockerls",
+	"docker_compose_language_service",
+	"eslint",
+	"groovyls",
+	"helm_ls",
+	"html",
+	"jsonls",
+	"terraformls",
+	"ts_ls",
+	"taplo",
+	"marksman",
+	"harper_ls",
+	"basedpyright",
+	"yamlls",
+})

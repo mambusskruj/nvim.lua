@@ -40,10 +40,15 @@ return {
 			{ "<leader>gg", "<cmd>G<cr>", noremap = true },
 			{ "<leader>gj", "<cmd>diffget //2<cr>", noremap = true },
 			{ "<leader>gk", "<cmd>diffget //3<cr>", noremap = true },
-			{ "<leader>gfr", "<cmd>G fetch | G rebase origin/master<cr>", noremap = true },
 			{ "<leader>gb", "<cmd>G blame<cr>", noremap = true },
 			{ "<leader>gl", "<cmd>Gclog<cr>", noremap = true },
 			{ "<leader>gL", "<cmd>G fetch | G log  --decorate<cr>", noremap = true },
 		},
+	},
+
+	-- The plugin provides a simple command, :Linediff,
+	-- which is used to diff two separate blocks of text.
+	{
+		"AndrewRadev/linediff.vim",
 	},
 }

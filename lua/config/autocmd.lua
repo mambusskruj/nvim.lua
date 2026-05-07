@@ -1,6 +1,22 @@
 -- remove whitespaces
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.js,*.ts,*.tsx,*.lua,*.json",
+	pattern = {
+		"*.py",
+		"*.yml",
+		"*.yaml",
+		"*.sh",
+		"*.bash",
+		"Dockerfile",
+		"Dockerfile.*",
+		"*.js",
+		"*.ts",
+		"*.tsx",
+		"*.lua",
+		"*.json",
+		"*.tf",
+		"*.tg",
+		"*.env",
+	},
 	command = [[:%s/\s\+$//e]],
 })
 
@@ -85,7 +101,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 -- Treesitter-based highlights
 vim.api.nvim_create_autocmd("FileType", {
-	-- pattern = "*.py,*.yml,*.yaml,*.sh,*.bash,Dockerfile,*.md,*.js,*.ts,*.tsx,*.lua,*.html,*.toml,gitcommit",
 	pattern = {
 		"lua",
 		"python",
@@ -99,8 +114,20 @@ vim.api.nvim_create_autocmd("FileType", {
 		"javascript",
 		"sh",
 		"toml",
+		"terraform",
 	},
 	callback = function()
 		vim.treesitter.start()
+	end,
+})
+
+-- disable native autocomplete for Telescope input
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		if vim.bo.buftype == "nofile" or vim.bo.buftype == "" then
+			vim.opt.autocomplete = false
+			return
+		end
+		vim.opt.autocomplete = true
 	end,
 })

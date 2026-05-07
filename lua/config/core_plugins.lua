@@ -1,1 +1,6 @@
-vim.keymap.set("n", "<Leader>u", "<CMD>packadd nvim.undotree | Undotree<CR>")
+vim.cmd.packadd("nvim.undotree")
+require("undotree")
+vim.keymap.set("n", "<leader>u", "<cmd>Undotree<CR>")
+
+vim.cmd.packadd("nvim.difftool")
+require("difftool")
