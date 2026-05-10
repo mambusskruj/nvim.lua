@@ -13,16 +13,16 @@ vim.keymap.set("n", "G", "Gzz")
 
 -- do not replace copied text by default
 vim.keymap.set("x", "p", "P", {
-	noremap = true,
-	silent = true,
-	desc = "Paste over selection without overwriting register",
+  noremap = true,
+  silent = true,
+  desc = "Paste over selection without overwriting register",
 })
 
 -- original Vim/Neovim visual paste behavior with replacing text in register
 vim.keymap.set("x", "<C-p>", "p", {
-	noremap = true,
-	silent = true,
-	desc = "Paste over selection and overwrite register",
+  noremap = true,
+  silent = true,
+  desc = "Paste over selection and overwrite register",
 })
 
 -- disable Q
@@ -58,7 +58,7 @@ vim.keymap.set("n", "<leader>5", "<cmd>tabn 5<cr>")
 
 -- Close current tab aka close all windows in tab
 vim.keymap.set("n", "<C-w>C", "<cmd>tabclose<CR>", {
-	desc = "Close current tab aka close all windows in tab",
+  desc = "Close current tab aka close all windows in tab",
 })
 
 vim.keymap.set("n", "<leader>f", "<cmd>Oil --float <cr>")

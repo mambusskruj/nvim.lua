@@ -19,10 +19,10 @@ vim.g.qf_disable_statusline = true
 
 -- self explainatory
 vim.opt.fillchars = {
-	fold = " ",
-	diff = "╱",
-	wbr = " ",
-	msgsep = "─",
+  fold = " ",
+  diff = "╱",
+  wbr = " ",
+  msgsep = "─",
 }
 
 -- set shell for faster output
@@ -103,11 +103,11 @@ vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 -- Concealing only for markdown files
 vim.api.nvim_create_autocmd("Filetype", {
-	pattern = "markdown",
-	callback = function()
-		-- allow concealed characters (hide markdown)
-		vim.opt.conceallevel = 2
-	end,
+  pattern = "markdown",
+  callback = function()
+    -- allow concealed characters (hide markdown)
+    vim.opt.conceallevel = 2
+  end,
 })
 
 vim.opt.winborder = "rounded"

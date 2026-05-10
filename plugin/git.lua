@@ -1,25 +1,25 @@
 vim.pack.add({ "https://github.com/sindrets/diffview.nvim" })
 require("diffview").setup({
-	view = {
-		default = {
-			winbar_info = true,
-		},
-	},
-	file_panel = {
-		win_config = {
-			width = 40,
-		},
-	},
+  view = {
+    default = {
+      winbar_info = true,
+    },
+  },
+  file_panel = {
+    win_config = {
+      width = 40,
+    },
+  },
 })
 
 vim.pack.add({ "https://github.com/aaronhallaert/advanced-git-search.nvim" })
 require("telescope").setup({
-	-- move this to the place where you call the telescope setup function
-	extensions = {
-		advanced_git_search = {
-			-- See Config
-		},
-	},
+  -- move this to the place where you call the telescope setup function
+  extensions = {
+    advanced_git_search = {
+      -- See Config
+    },
+  },
 })
 require("telescope").load_extension("advanced_git_search")
 

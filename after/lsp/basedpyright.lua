@@ -1,9 +1,9 @@
 return {
-	settings = {
-		basedpyright = {
-			analysis = {
-				typeCheckingMode = "off",
-			},
-		},
-	},
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "off",
+      },
+    },
+  },
 }

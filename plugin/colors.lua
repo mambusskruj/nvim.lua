@@ -5,5 +5,5 @@ vim.cmd([[set background=light]])
 -- highlight arguments
 vim.pack.add({ "https://github.com/m-demare/hlargs.nvim" })
 require("hlargs").setup({
-	color = "#c4331d",
+  color = "#c4331d",
 })
