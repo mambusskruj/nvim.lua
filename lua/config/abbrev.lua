@@ -26,5 +26,7 @@ cabbrev("fd", "tabnew | vert GrugFar")
 cabbrev("O", "Oil --float")
 cabbrev("Oh", "Oil --float ./")
 cabbrev("crew", "DiffviewClose")
+cabbrev("SopsYaml", "vs | terminal sops edit --input-type yaml --output-type yaml %")
+cabbrev("SopsEnv", "vs | terminal sops edit --input-type dotenv --output-type dotenv %")
 
 return M
