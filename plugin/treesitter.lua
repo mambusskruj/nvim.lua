@@ -28,6 +28,7 @@ require("nvim-treesitter").install({
   "html",
   "json",
   "terraform",
+  "hcl",
   "toml",
   "typescript",
   "wgsl",
