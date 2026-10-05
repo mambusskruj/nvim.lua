@@ -8,11 +8,14 @@ require("lint").linters_by_ft = {
 vim.pack.add({ "https://github.com/mhartington/formatter.nvim" })
 require("formatter").setup({
   filetype = {
-    json = {
-      require("formatter.filetypes.json").jq,
-    },
+    -- json = {
+    --   require("formatter.filetypes.json").jq,
+    -- },
     python = {
       require("formatter.filetypes.python").ruff,
+    },
+    terraform = {
+      require("formatter.filetypes.terraform").terraformfmt,
     },
     lua = {
       require("formatter.filetypes.lua").stylua,
