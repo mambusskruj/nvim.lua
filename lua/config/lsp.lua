@@ -19,6 +19,9 @@ vim.pack.add({
 })
 
 require("mason").setup({
+  firewall = {
+    enable = true,
+  },
   ui = {
     icons = {
       package_installed = "✓",
@@ -42,7 +45,8 @@ vim.lsp.enable({
   "helm_ls",
   "html",
   "jsonls",
-  "terraformls",
+  "terraform-ls",
+  "terragrunt-ls",
   "ts_ls",
   "taplo",
   "marksman",
